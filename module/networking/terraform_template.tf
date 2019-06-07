@@ -184,7 +184,7 @@
   "terraform": {
     "backend": {
       "s3": {
-        "bucket": "aws-migration-app",
+        "bucket": "aws-app-migration-aws",
         "key": "networking/terraform.tfstate",
         "region": "us-east-1"
       }
