@@ -44,7 +44,7 @@
       "app": {
         "container_definitions": "${file(\"../networking/service_definition.json\")}",
         "cpu": "${var.fargate_cpu}",
-        "execution_role_arn": "arn:aws:iam::418476321382:role/ecsTaskExecutionRole",
+        "execution_role_arn": "${var.ecs_task_execition_role}",
         "family": "app",
         "memory": "${var.fargate_memory}",
         "network_mode": "awsvpc",
@@ -55,7 +55,7 @@
   "terraform": {
     "backend": {
       "s3": {
-        "bucket": "aws-migration-app",
+        "bucket": "aws-app-migration-aws",
         "key": "ecs/terraform.tfstate",
         "region": "us-east-1"
       }
@@ -103,7 +103,7 @@
       "description": "ECS Task Capabilities"
     },
     "ecs_task_execition_role": {
-      "default": "arn:aws:iam::418476321382:role/ecsTaskExecutionRole",
+      "default": "arn:aws:iam::550229128112:role/ecsTaskExecutionRole",
       "description": "ECS Task Execution Role"
     },
     "fargate_cpu": {
